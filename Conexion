@@ -1,0 +1,20 @@
+package Datos;
+
+import java.sql.*;
+
+public class Conexion {
+	public static Connection Conectar() throws Exception {
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Connection cn = DriverManager.getConnection(
+					"jdbc:sqlserver://localhost:1433; databaseName=BDFarmacia",
+					"sa", "sql");
+			return cn;
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+}
+//
+// Conexion c = new Conexion
+// c.conectar
